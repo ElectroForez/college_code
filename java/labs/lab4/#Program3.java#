@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Program3 {
+    public static void main(String args[]) throws IOException {
+	String inputFilename = "ex3.csv";
+	String outputFilename = "ex4.csv";
+	FileReader fr = new FileReader(inputFilename);
+	FileWriter fw = new FileWriter(outputFilename);
+	Scanner sc = new Scanner(fr);
+	String header[] = sc.nextLine().split(",");
+	while(sc.hasNextLine()) {	    
+	    String lineSplit[] = sc.nextLine().split(",");
+	    for (int i=1; i < header.length; i++) {
+		fw.write(lineSplit[0] + ",");
+		fw.write(header[i] + ",");
+		fw.write(lineSplit[i] + "");
+		fw.write("\n");
+	    }	    
+	}
+	fr.close();
+	fw.close();
+    }
+}

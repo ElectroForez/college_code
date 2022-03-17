@@ -1,0 +1,48 @@
+public class Program {
+    public static void main(String args[]) {
+	Firm firm = new Firm();
+	firm.setNameFirm("Abasa");
+	Department dep = new Department();	
+	System.out.println(dep.getNameFirm());
+	dep.setNameDepartment("ISIP");
+	System.out.println(dep.getNameDepartment());
+	System.out.println(dep.numEmployees);
+    }
+}
+
+
+class Firm {
+    private String nameFirm;
+	
+    private void setNameFirm(String nameFirm) {
+	this.nameFirm = nameFirm;
+    }
+    
+    String getNameFirm() {
+	return nameFirm;
+    }
+}
+class Department extends Firm {
+    private String nameDepartment;
+    static int numEmployees = 0;    
+    private void setNameDepartment(String nameDepartment) {
+	this.nameDepartment = nameDepartment;
+    }
+    
+    String getNameDepartment() {
+	return nameDepartment;
+    }    
+}
+class Employess {
+    private String FIO;
+    private Department department;
+    void setFIO(String FIO) {
+	this.FIO = FIO;
+    }
+    
+    String getFIO() {
+	return FIO;
+    }
+    
+
+}

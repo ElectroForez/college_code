@@ -1,0 +1,9 @@
+public class Program1 {
+    static int randomNum(int min, int max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    public static void main(String args[]) {
+	System.out.println(randomNum(1, 10);
+    }
+}

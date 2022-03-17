@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+enum {
+  STR_SIZE = 7
+};
+
+void escape(char from[], char to[]) {
+  char spec_symbols[] = {'\n', '\t'};
+  char spec_letter[] = {'n', 't'};
+  int length = strlen(from);
+  int to_i = 0; 
+  for(int i = 0; i < length; i++) {
+    int is_spec = 0;
+    for (int j = 0; j < strlen(spec_symbols); j++) {
+      if (from[i] == spec_symbols[j]) {
+	to[to_i++] = '\\';
+	to[to_i++] = spec_letter[j];
+	is_spec = 1;
+	break;
+      }
+    }
+    if (!is_spec)
+      to[to_i++] = from[i];
+  }
+}
+
+
+int main() {
+  char s[] = "\t\t\t\n\n\n\n";
+  char t[STR_SIZE * 2];
+  escape(s, t);
+  
+  printf("source:%s\n", s);
+  printf("len = %zu\n", strlen(s));
+  printf("target:%s\n", t); 
+}

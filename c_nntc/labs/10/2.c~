@@ -1,0 +1,19 @@
+#include <stdio.h>
+int printb(int num, int byte) {
+  printf(1 << (8 * byte));
+  
+  /* for (int i = 1 << (8 * 2)  */
+  return 0;
+}
+int super_glue(int a, int b) {
+  
+}
+
+int main() {
+  int a;
+  int b;
+  scanf("%d", &a);
+  scanf("%d", &b);  
+  super_glue(a, b);
+  return 0;
+}

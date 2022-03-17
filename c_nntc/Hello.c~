@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char spaces[] = "";
+  int a = 10;
+  for (int i; i < a; i++) {
+    printf("%sHello, world! %d\n", spaces, i);  
+    strcat(spaces, " ");
+  }
+  return 0;
+}

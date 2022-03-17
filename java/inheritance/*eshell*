@@ -1,0 +1,376 @@
+Welcome to the Emacs shell
+
+~/projects/java/inheritance $ javac Program.java 
+Program.java:16: error: illegal start of expression
+	x = {x0, x1, x2};
+	    ^
+Program.java:16: error: not a statement
+	x = {x0, x1, x2};
+	     ^
+Program.java:16: error: ';' expected
+	x = {x0, x1, x2};
+	       ^
+Program.java:16: error: not a statement
+	x = {x0, x1, x2};
+	         ^
+Program.java:16: error: ';' expected
+	x = {x0, x1, x2};
+	           ^
+Program.java:16: error: not a statement
+	x = {x0, x1, x2};
+	             ^
+Program.java:16: error: ';' expected
+	x = {x0, x1, x2};
+	               ^
+Program.java:17: error: <identifier> expected
+	y = {y0, y1, y2};
+	 ^
+Program.java:18: error: invalid method declaration; return type required
+	checkCoor(x, y);
+	^
+Program.java:18: error: <identifier> expected
+	checkCoor(x, y);
+	           ^
+Program.java:18: error: <identifier> expected
+	checkCoor(x, y);
+	              ^
+Program.java:21: error: class, interface, or enum expected
+    public void checkCoor(int[] x, int[] y) {
+           ^
+Program.java:23: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	^
+Program.java:23: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	                ^
+Program.java:23: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	                                  ^
+Program.java:25: error: class, interface, or enum expected
+	    y_check = y[i];
+	    ^
+Program.java:26: error: class, interface, or enum expected
+	    for (int j = i + 1; j < x.length) {
+	    ^
+Program.java:26: error: class, interface, or enum expected
+	    for (int j = i + 1; j < x.length) {
+	                        ^
+Program.java:29: error: class, interface, or enum expected
+		    throw new Exception("The triangle must not have the same vertices");
+		    ^
+Program.java:30: error: class, interface, or enum expected
+		}
+		^
+Program.java:34: error: class, interface, or enum expected
+    public double getPerimeter() {
+           ^
+Program.java:36: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	^
+Program.java:36: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	                ^
+Program.java:36: error: class, interface, or enum expected
+	for (int i = 0; i < x.length - 1; i++) {
+	                                  ^
+Program.java:38: error: class, interface, or enum expected
+	}
+	^
+Program.java:40: error: class, interface, or enum expected
+	return perimetr;
+	^
+Program.java:41: error: class, interface, or enum expected
+    }
+    ^
+Program.java:46: error: illegal start of expression
+	x = {x0, x0, x2};
+	    ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	     ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	       ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	         ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	           ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	             ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	               ^
+Program.java:47: error: <identifier> expected
+	y = {y0, y1, y0};
+	 ^
+Program.java:48: error: invalid method declaration; return type required
+	checkCoor(x, y);
+	^
+Program.java:48: error: <identifier> expected
+	checkCoor(x, y);
+	           ^
+Program.java:48: error: <identifier> expected
+	checkCoor(x, y);
+	              ^
+Program.java:50: error: class, interface, or enum expected
+    public double getSquare() {
+           ^
+Program.java:52: error: class, interface, or enum expected
+	double b = Math.sqrt(Math.pow(x[2] - x[0] , 2));
+	^
+Program.java:53: error: class, interface, or enum expected
+	return a * b / 2;
+	^
+Program.java:54: error: class, interface, or enum expected
+    }
+    ^
+42 errors
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ javac Program.java 
+Program.java:26: error: ';' expected
+	    for (int j = i + 1; j < x.length) {
+	                                    ^
+Program.java:46: error: illegal start of expression
+	x = {x0, x0, x2};
+	    ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	     ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	       ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	         ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	           ^
+Program.java:46: error: not a statement
+	x = {x0, x0, x2};
+	             ^
+Program.java:46: error: ';' expected
+	x = {x0, x0, x2};
+	               ^
+Program.java:47: error: <identifier> expected
+	y = {y0, y1, y0};
+	 ^
+Program.java:48: error: invalid method declaration; return type required
+	checkCoor(x, y);
+	^
+Program.java:48: error: <identifier> expected
+	checkCoor(x, y);
+	           ^
+Program.java:48: error: <identifier> expected
+	checkCoor(x, y);
+	              ^
+Program.java:50: error: class, interface, or enum expected
+    public double getSquare() {
+           ^
+Program.java:52: error: class, interface, or enum expected
+	double b = Math.sqrt(Math.pow(x[2] - x[0] , 2));
+	^
+Program.java:53: error: class, interface, or enum expected
+	return a * b / 2;
+	^
+Program.java:54: error: class, interface, or enum expected
+    }
+    ^
+16 errors
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ javac Program.java 
+Program.java:12: error: class Triangle is public, should be declared in a file named Triangle.java
+public class Triangle {
+       ^
+Program.java:43: error: class StraightTriangle is public, should be declared in a file named StraightTriangle.java
+public class StraightTriangle extends Triangle {
+       ^
+Program.java:3: error: cannot find symbol
+	sTriangle1 = new StraightTriangle();
+	^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:4: error: cannot find symbol
+	sTriangle2 = new StraightTriangle();
+	^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:5: error: cannot find symbol
+	sTriangle1.setCoor(0, 0, 3, 2);
+	^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:6: error: cannot find symbol
+	sTriangle2.setCoor(0, 0, 4, 5);
+	^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:7: error: cannot find symbol
+	System.out.printf("sTriangle1 perimetr =%5.2f square =%5.2f", sTriangle1.getPerimeter(), sTriangle1.getSquare());
+	                                                              ^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:7: error: cannot find symbol
+	System.out.printf("sTriangle1 perimetr =%5.2f square =%5.2f", sTriangle1.getPerimeter(), sTriangle1.getSquare());
+	                                                                                         ^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:8: error: cannot find symbol
+	System.out.printf("sTriangle2 perimetr =%5.2f square =%5.2f", sTriangle2.getPerimeter(), sTriangle2.getSquare()); 
+	                                                              ^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:8: error: cannot find symbol
+	System.out.printf("sTriangle2 perimetr =%5.2f square =%5.2f", sTriangle2.getPerimeter(), sTriangle2.getSquare()); 
+	                                                                                         ^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:44: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+11 errors
+~/projects/java/inheritance $ javac Program.java 
+Program.java:3: error: cannot find symbol
+	sTriangle1 = new StraightTriangle();
+	^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:4: error: cannot find symbol
+	sTriangle2 = new StraightTriangle();
+	^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:5: error: cannot find symbol
+	sTriangle1.setCoor(0, 0, 3, 2);
+	^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:6: error: cannot find symbol
+	sTriangle2.setCoor(0, 0, 4, 5);
+	^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:7: error: cannot find symbol
+	System.out.printf("sTriangle1 perimetr =%5.2f square =%5.2f", sTriangle1.getPerimeter(), sTriangle1.getSquare());
+	                                                              ^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:7: error: cannot find symbol
+	System.out.printf("sTriangle1 perimetr =%5.2f square =%5.2f", sTriangle1.getPerimeter(), sTriangle1.getSquare());
+	                                                                                         ^
+  symbol:   variable sTriangle1
+  location: class Program
+Program.java:8: error: cannot find symbol
+	System.out.printf("sTriangle2 perimetr =%5.2f square =%5.2f", sTriangle2.getPerimeter(), sTriangle2.getSquare()); 
+	                                                              ^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:8: error: cannot find symbol
+	System.out.printf("sTriangle2 perimetr =%5.2f square =%5.2f", sTriangle2.getPerimeter(), sTriangle2.getSquare()); 
+	                                                                                         ^
+  symbol:   variable sTriangle2
+  location: class Program
+Program.java:44: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+9 errors
+~/projects/java/inheritance $ javac Program.java 
+Program.java:29: error: unreported exception Exception; must be caught or declared to be thrown
+		    throw new Exception("The triangle must not have the same vertices");
+		    ^
+Program.java:44: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ javac Program.java 
+Program.java:12: error: '{' expected
+class Triangle t {
+              ^
+1 error
+~/projects/java/inheritance $ javac Program.java 
+Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+	checkCoor(x, y);
+	         ^
+Program.java:44: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors
+~/projects/java/inheritance $ Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+Program.java:18:: command not found
+must: command not found
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+Program.java:18:: command not found
+must: command not found
+~/projects/java/inheritance $ Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+Program.java:18:: command not found
+must: command not found
+~/projects/java/inheritance $ javac Program.java 
+Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+	checkCoor(x, y);
+	         ^
+Program.java:45: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ javac Program.java 
+Program.java:18: error: unreported exception Exception; must be caught or declared to be thrown
+	checkCoor(x, y);
+	         ^
+Program.java:45: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors
+~/projects/java/inheritance $ 
+~/projects/java/inheritance $ javac Program.java 
+Program.java:45: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+1 error
+~/projects/java/inheritance $ Program.java:45: error: method does not override or implement a method from a supertype
+Program.java:45:: command not found
+~/projects/java/inheritance $ Program.java:45: error: method does not override or implement a method from a supertype
+Program.java:45:: command not found
+~/projects/java/inheritance $ javac Program.java 
+~/projects/java/inheritance $ java Program
+sTriangle1 perimetr = 8,61 square = 3,00sTriangle2 perimetr =15,40 square =10,00~/projects/java/inheritance $ java Program
+sTriangle1 perimetr = 8,61 square = 3,00sTriangle2 perimetr =15,40 square =10,00~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr = 8,61 square = 3,00
+sTriangle2 perimetr =15,40 square =10,00
+~/projects/java/inheritance $ 	
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr = 8,61 square =  3,00
+sTriangle2 perimetr =15,40 square = 10,00
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr = 8,61 square =  3,00
+sTriangle2 perimetr =12,00 square =  6,00
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr =12,39 square =  5,00
+sTriangle2 perimetr =12,00 square =  6,00
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr =22,22 square = 21,00
+sTriangle2 perimetr =12,00 square =  6,00
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr = 22,22 square = 21,00
+sTriangle2 perimetr = 12,00 square =  6,00
+~/projects/java/inheritance $ javac Program.java && java Program
+The pair (0, 0) is repeatedException in thread "main" java.lang.Error: The triangle must not have the same vertices
+	at Triangle.checkCoor(Program.java:29)
+	at StraightTriangle.setCoor(Program.java:49)
+	at Program.main(Program.java:5)
+~/projects/java/inheritance $ javac Program.java && java Program
+The pair (0, 0) is repeated
+Exception in thread "main" java.lang.Error: The triangle must not have the same vertices
+	at Triangle.checkCoor(Program.java:29)
+	at StraightTriangle.setCoor(Program.java:49)
+	at Program.main(Program.java:5)
+~/projects/java/inheritance $ javac Program.java && java Program
+sTriangle1 perimetr = 18,81 square = 15,00
+sTriangle2 perimetr = 12,00 square =  6,00
+~/projects/java/inheritance $ ls
+#*eshell*#  *eshell*  Program.class  Program.java  Program.java~  StraightTriangle.class  Triangle.class
+~/projects/java/inheritance $ 

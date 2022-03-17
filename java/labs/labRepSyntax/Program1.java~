@@ -1,0 +1,36 @@
+public class Program1 {
+    static int randomNum(int min, int max) {
+	return (int)(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    
+    public static void main(String args[]) {
+	final String STONE = "Камень";
+	final String SCISSORS = "Ножницы";
+	final String PAPER = "Бумага";
+	String variants[] = {STONE, SCISSORS, PAPER};
+	String wins[] = {SCISSORS, PAPER, STONE};
+
+	int i_v1 = randomNum(0, variants.length - 1);
+	int i_v2 = randomNum(0, variants.length - 1);
+
+	System.out.println("Первый игрок выбрал: " + variants[i_v1]);
+	System.out.println("Второй игрок выбрал: " + variants[i_v2]);
+	
+	boolean victory = false;
+	if (variants[i_v2] == wins[i_v1]) { 
+	    victory = true;
+	} else if (variants[i_v1] == wins[i_v2]) {
+	    victory = true;
+	    int t = i_v1;
+	    i_v1 = i_v2;
+	    i_v2 = t;
+	}
+	
+	if (victory) {
+	    System.out.printf("%s победил %s\n", variants[i_v1], variants[i_v2]);
+	}  else {
+	    System.out.println("Ничья");
+	}
+		
+    }
+}

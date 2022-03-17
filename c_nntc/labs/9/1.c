@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+enum {
+  BUFF_SIZE = 13
+};
+int main(int arg_count, char** args) {
+  int f = open(args[1], O_RDONLY);
+  char buf[BUFF_SIZE];
+  if (f == -1) {
+    printf("AAAAAAAAAA\n");
+    return 1;
+  }
+  
+  int c_read;  
+  while ((c_read = read(f, buf, BUFF_SIZE)) > 0) {
+    write(1, buf, c_read);
+  }
+  close(f);
+  return 0;
+}

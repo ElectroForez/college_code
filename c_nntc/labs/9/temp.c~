@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <fcntrl.h>
+#include <unistd.h>
+
+int main(int argc, char** args) {
+  printf("argc = %d\n", argc);
+  printf("\nargs\n");
+  for (int i = 0; i < argc; i++)
+    printf("%s\n", args[i]);
+  return 0;
+}

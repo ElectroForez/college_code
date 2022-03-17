@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Program5 {
+    static int randomNum(int min, int max) {
+	return (int)(Math.random()*((max-min)+1))+min;
+    }
+    public static void main(String args[]) {
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Введите n: ");
+	int n = sc.nextInt();
+	int guessNumber = randomNum(1, n);
+	System.out.print("Введите k: ");
+	int k = sc.nextInt();
+	for (int i = 1; i <= k; i++) {
+	    System.out.println("Попытка " + i);
+	    System.out.print("Ваше число: ");
+	    int conjecture  = sc.nextInt();
+	    if (guessNumber == conjecture) {
+		System.out.println("Вы угадали!");
+		return;
+	    }
+	    if (conjecture < guessNumber)
+		System.out.println("Загаданное число больше!");
+	    else
+		System.out.println("Загаданное число меньше!");
+	}
+	System.out.println("Попытки закончились. Загаданное число - " + guessNumber); 
+    }
+
+}
