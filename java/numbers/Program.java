@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.regex.*;
+
 public class Program {
     public static void main(String args[]) {
 	Scanner sc = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class Program {
 	else
 	    return false;
     }
+    
     static boolean reMatch(String str, String regex) {
 	return Pattern.compile(regex).matcher(str).matches();
     }
@@ -23,7 +25,7 @@ public class Program {
 	char[] tempArray = str.toCharArray();
 	if (reMatch(str, "0*")) {
 	    tempArray[tempArray.length - 1] = '1';
-	} else if (reMatch(str, "z*")) {
+	} else if (reMatch(str, "Z*")) {
 	    for (int j = 0; j < tempArray.length; j++)
 		tempArray[j] = 'A';
 	}
@@ -81,13 +83,13 @@ public class Program {
 	if (isNum(sym)) {
 	    if (sym == '9')
 		return new char[] {'0', '1'};
-	    return new char[] {(char)(code_sym + 1), '0'};	    	    
+	    return new char[] {(char)(code_sym + 1), '0'};
 	}
 	if (sym >= 'A' && sym <= 'Z') {
 	    if (sym == 'Z')
 		return new char[] {'A', '1'};
-	    return new char[] {(char)(code_sym + 1), '0'};	    	    
-	}	
+	    return new char[] {(char)(code_sym + 1), '0'};
+	}
 	return null;
     }
     
@@ -97,6 +99,7 @@ public class Program {
 	    System.out.println("Неверный формат номера");
 	    return false;
 	}
+	
 	Pattern sub_pattern = Pattern.compile("\\d+");
 	Matcher sub_matcher = sub_pattern.matcher(number);
 	while(sub_matcher.find()) {
