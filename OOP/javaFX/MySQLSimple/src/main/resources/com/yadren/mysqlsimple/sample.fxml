@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="868.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yadren.mysqlsimple.Controller">
+   <children>
+      <Label layoutX="402.0" layoutY="38.0" style="-fx-text-fill: #fff;" text="Услуги">
+         <font>
+            <Font name="Panton Black Caps" size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="23.0" layoutY="125.0" prefHeight="245.0" prefWidth="818.0" style="-fx-background-color: #333;" stylesheets="@css/main.css">
+         <content>
+            <VBox fx:id="all_tasks" prefWidth="199.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
