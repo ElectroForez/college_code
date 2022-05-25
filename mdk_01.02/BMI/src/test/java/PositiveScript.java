@@ -25,4 +25,10 @@ public class PositiveScript {
         var actualResult = BMI.getBMIResult(75, 100);
         Assert.assertEquals("избыточная масса тела", actualResult);
     }
+
+    @Test
+    public void checkNormalBMIValue() {
+        var actualResult = BMI.calcBMI(75, 180);
+        Assert.assertEquals(23.15, actualResult, 0.01);
+    }
 }
