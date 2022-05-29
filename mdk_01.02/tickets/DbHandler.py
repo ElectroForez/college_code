@@ -1,3 +1,4 @@
+import datetime
 import sqlite3
 import os
 
@@ -23,11 +24,31 @@ class DbHandler:
             sqldata = datafile.read()
         self.connection.executescript(sqldata)
 
-    def buy_ticket(self, ticket_id):
-        ticket = self.get_ticket(ticket_id)
-        if ticket is None:
-            raise sqlite3.DataError(f"Билет {ticket_id} не существует")
+    def ticket_is_purchased(self, ticket_id):
+        self.is_ticket_exists(ticket_id, True)
+        ticket = self.select("SELECT * FROM event_tickets "
+                             f"WHERE ticket_id = {ticket_id} "
+                             "AND "
+                             "ticket_status = 'куплен'")
+        if ticket:
+            return True
+        else:
+            return False
 
+    def is_ticket_exists(self, ticket_id, raise_error=False):
+        ticket = self.select("SELECT ticket_id "
+                             "FROM event_tickets "
+                             f"WHERE ticket_id = {ticket_id}", 1)
+        if ticket is not None:
+            return True
+        else:
+            if raise_error:
+                raise sqlite3.DataError(f"Билет {ticket_id} не существует")
+            return False
+
+    def buy_ticket(self, ticket_id):
+        self.is_ticket_exists(ticket_id, True)
+        ticket = self.get_ticket(ticket_id)
         if ticket[-1] != 'в продаже':
             raise sqlite3.DataError(f"Билет {ticket_id} не в продаже")
 
@@ -36,24 +57,58 @@ class DbHandler:
                             f"WHERE ticket_id = {ticket_id}")
         self.insert_history(ticket_id, 'куплен')
 
-    def insert_history(self, ticket_id, status):
+    def insert_history(self, ticket_id, status, date=None):
+        if date is None:
+            date = datetime.datetime.now()
+
         self.cursor.execute("INSERT INTO tickets_history VALUES "
-                            f"({ticket_id}, datetime('now', 'localtime'), '{status}')")
+                            f"({ticket_id}, datetime('{date}'), '{status}')")
 
     def get_ticket(self, ticket_id):
-        result = self.select(f"SELECT * FROM event_tickets WHERE ticket_id = {ticket_id}", 1)
+        result = self.select(f"SELECT * FROM event_tickets WHERE ticket_id = {ticket_id}")[0]
         return result
 
-    def get_refunded_sum(self, ticket_id):
-        ticket_type = self.select("SELECT ticket_type FROM event_tickets "
-                                  "JOIN events e ON e.event_id = event_tickets.event_id "
-                                  f"WHERE ticket_id={ticket_id}", 1)[0]
-        if ticket_type is None:
+    def refund_ticket(self, ticket_id, refund_date):
+        self.is_ticket_exists(ticket_id, True)
+        if not self.ticket_is_purchased(ticket_id):
+            raise sqlite3.DataError(f"Билет {ticket_id} не куплен")
+
+        self.cursor.execute("UPDATE event_tickets "
+                            "SET ticket_status = 'в продаже' "
+                            f"WHERE ticket_id = {ticket_id}")
+        refunded_sum = self.get_refunded_sum(ticket_id, refund_date)
+        if refunded_sum != 0:
+            self.insert_history(ticket_id, 'возврат', date=refund_date)
+        return refunded_sum
+
+    def get_refunded_sum(self, ticket_id, refund_date):
+        self.is_ticket_exists(ticket_id, True)
+
+        ticket_price = self.select("SELECT ticket_price "
+                                   "FROM event_tickets "
+                                   f"WHERE ticket_id = {ticket_id} "
+                                   f"", 1)
+        if ticket_price is None:
             return
-        remaining_time = self.select("SELE")
-        refunded_percent = self.select("SELECT ticket_type FROM event_tickets "
-                                       "JOIN events e ON e.event_id = event_tickets.event_id "
-                                       f"WHERE ticket_id={ticket_id}", 1)[0]
+
+        refund_percentages = self.select(f"""
+            SELECT MAX(refund_percent)
+            FROM
+            event_tickets et
+            JOIN events e
+            ON e.event_id = et.event_id
+            JOIN ticket_refund_sum trs
+            ON trs.ticket_type_id = e.ticket_type_id
+            WHERE
+            et.ticket_id = {ticket_id}
+            AND
+            remaining_time < (strftime("%s", e.event_datetime) - strftime("%s", datetime('{refund_date}')));
+        """, 1)
+
+        if refund_percentages is None:
+            refund_percentages = 0
+        refund_sum = ticket_price * refund_percentages // 100
+        return refund_sum
 
     def select(self, query, fetch_size=-1):
         """return result of select query"""
@@ -63,7 +118,7 @@ class DbHandler:
         elif fetch_size == 1:
             result = self.cursor.fetchone()
             if result is not None:
-                result = result
+                result = result[0]
         else:
             result = self.cursor.fetchmany(fetch_size)
         return result
