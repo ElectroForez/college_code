@@ -72,5 +72,13 @@ public class TestIndex {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void footerRest() {
+        WebElement link = driver.findElement(By.cssSelector("footer > section > div > div > div:nth-child(2) > ul > li:nth-child(3) > a"));
+        var href = link.getAttribute("href");
+        var expectedResult = "https://www.pac.ru/guide/italy/veneto/venice/";
+        Assert.assertEquals(expectedResult, href);
+    }
+
 
 }
