@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>564</width>
+    <height>504</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>130</y>
-      <width>701</width>
-      <height>341</height>
+      <x>90</x>
+      <y>110</y>
+      <width>391</width>
+      <height>291</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -33,8 +33,18 @@
      </item>
      <item>
       <widget class="QLineEdit" name="pass_edit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
        <property name="placeholderText">
         <string>Пароль</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="check_show_pass">
+       <property name="text">
+        <string>Показать пароль</string>
        </property>
       </widget>
      </item>
@@ -50,8 +60,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>50</y>
+      <x>160</x>
+      <y>30</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -66,10 +76,16 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>564</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuHello">
+    <property name="title">
+     <string>Hello</string>
+    </property>
+   </widget>
+   <addaction name="menuHello"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
